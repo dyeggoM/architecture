@@ -1,0 +1,93 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44320
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Generics/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "SwaggerKey": "Generics"
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44363
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Repositories/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "SwaggerKey": "Repositories"
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44309
+        }
+      ],
+      "UpstreamPathTemplate": "/api/UnitOfWork/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "SwaggerKey": "UnitOfWork"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "Generics",
+      "TakeServersFromDownstreamService": true,
+      "Config": [
+        {
+          "Name": "TEST.Architectures.Generics v1",
+          "Version": "v1",
+          "Url": "https://localhost:44320/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Repositories",
+      "TakeServersFromDownstreamService": true,
+      "Config": [
+        {
+          "Name": "TEST.Architectures.Repositories v1",
+          "Version": "v1",
+          "Url": "https://localhost:44363/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "UnitOfWork",
+      "TakeServersFromDownstreamService": true,
+      "Config": [
+        {
+          "Name": "TEST.Architectures.UnitOfWork v1",
+          "Version": "v1",
+          "Url": "https://localhost:44309/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44388"
+  }
+}
